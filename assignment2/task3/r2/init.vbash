@@ -1,0 +1,15 @@
+#!/bin/vbash                                             
+#r2->init.vbash
+
+source /opt/vyatta/etc/functions/script-template
+
+configure
+set interfaces ethernet eth0 address 19.2.0.2/22
+set interfaces ethernet eth1 address 19.4.0.2/16
+
+set protocols static route 10.1.0.0/18 next-hop 10.2.0.1
+set protocols static route 10.5.0.0/25 next-hop 10.2.0.1
+set protocols static route 10.3.0.0/20 next-hop 10.2.0.1
+
+commit                                                                    I
+exit

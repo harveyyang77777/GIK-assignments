@@ -1,0 +1,13 @@
+
+configure
+set service dhcp-server shared-network-name LAN authoritative 'enable'
+set service dhcp-server shared-network-name LAN subnet 10.1.0.0/18 default-router 10.1.0.1
+set service dhcp-server shared-network-name LAN subnet 10.1.0.0/18 range 0 start  10.1.0.100 
+set service dhcp-server shared-network-name LAN subnet 10.1.0.0/18 range 0 stop 10.1.0.200
+
+set service dhcp-server shared-network-name LAN subnet 10.1.0.0/18 disable false
+
+commit
+exit
+
+#show service dhcp-server
